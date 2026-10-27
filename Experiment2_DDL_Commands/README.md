@@ -191,63 +191,102 @@ Stock int check(Stock>=0));
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Shipments with the following constraints:
+ShipmentID as INTEGER should be the primary key.
+ShipmentDate as DATE.
+SupplierID as INTEGER should be a foreign key referencing Suppliers(SupplierID).
+OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
 
-```sql
--- Paste your SQL code below for Question 6
+```
+Create table Shipments(ShipmentID int primary key,
+ShipmentDate date,
+SupplierID int,
+OrderID int,
+foreign key(SupplierID) references Suppliers(SupplierID),
+foreign key(OrderID) references Orders(OrderID));
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="765" height="845" alt="image" src="https://github.com/user-attachments/assets/6a2f2725-f834-4d6a-a0c8-e612730f48e1" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Create a table named Reviews with the following columns:
+ReviewID as INTEGER
+ProductID as INTEGER
+Rating as REAL
+ReviewText as TEXT
 
-```sql
--- Paste your SQL code below for Question 7
+```
+Create a table named Reviews with the following columns:
+ReviewID as INTEGER
+ProductID as INTEGER
+Rating as REAL
+ReviewText as TEXT
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="565" height="791" alt="image" src="https://github.com/user-attachments/assets/8c6738e9-07e6-4e90-8989-fc010a1ae502" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Insert the following employees into the Employee table:
+EmployeeID  Name   Position    Department  Salary
+2           John Smith  Developer   IT     75000    
+3           Anna Bell   Designer    Marketing 68000
 
-```sql
--- Paste your SQL code below for Question 8
+
+```
+insert into Employee(EmployeeID,Name,Position,Department,Salary)values(2,"John Smith","Developer","IT",75000),
+(3,"Anna Bell","Designer","Marketing",68000);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="641" height="826" alt="image" src="https://github.com/user-attachments/assets/7533a85a-531c-47e7-af53-8cee663632df" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Create a new table named products with the following specifications:
+product_id as INTEGER and primary key.
+product_name as TEXT and not NULL.
+list_price as DECIMAL (10, 2) and not NULL.
+discount as DECIMAL (10, 2) with a default value of 0 and not NULL.
+A CHECK constraint at the table level to ensure:
+list_price is greater than or equal to discount
+discount is greater than or equal to 0
+list_price is greater than or equal to 0
 
-```sql
--- Paste your SQL code below for Question 9
+```
+Create table products(product_id int primary key,
+product_name text NOT NULL,
+list_price DECIMAL(10,2) NOT NULL check(list_price>=discount),
+discount DECIMAL(10,2) NOT NULL DEFAULT 0 check(discount>=0),
+check(list_price>=0));
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="570" height="773" alt="image" src="https://github.com/user-attachments/assets/b121297c-8ca6-4dce-8028-4a8960c75f3b" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write an SQL command can to add a column named email of type TEXT to the customers table
 
-```sql
--- Paste your SQL code below for Question 10
+```
+ALTER TABLE customers ADD email TEXT;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="685" height="822" alt="image" src="https://github.com/user-attachments/assets/9265ed35-f0ed-4631-bf72-da2ef46c5a86" />
+
 
 
 ## RESULT
