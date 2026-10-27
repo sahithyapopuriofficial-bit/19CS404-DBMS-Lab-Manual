@@ -287,6 +287,8 @@ ALTER TABLE customers ADD email TEXT;
 
 <img width="685" height="822" alt="image" src="https://github.com/user-attachments/assets/9265ed35-f0ed-4631-bf72-da2ef46c5a86" />
 
+## SCREENSHOT OF MODULE 1 COMPLETION
+<img width="341" height="170" alt="image" src="https://github.com/user-attachments/assets/68f185ed-0aa8-4c47-bbaa-a618675b9e6d" />
 
 
 ## RESULT
