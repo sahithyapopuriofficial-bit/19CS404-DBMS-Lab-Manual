@@ -105,63 +105,89 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Write an SQL query to change the name of the column id to employee_id in the table employee.
 
-```sql
--- Paste your SQL code below for Question 1
+```
+ALTER TABLE employee RENAME COLUMN id TO employee_id;
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="631" height="795" alt="image" src="https://github.com/user-attachments/assets/7c2c8264-a846-4b6e-92ad-44747573dbb5" />
+
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert all products from Discontinued_products into Products.
+Table attributes are ProductID, ProductName, Price, Stock
 
-```sql
--- Paste your SQL code below for Question 2
+```
+INSERT INTO Products(ProductID,ProductName,Price,Stock)SELECT ProductID,ProductName,Price,Stock FROM Discontinued_products;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="681" height="787" alt="image" src="https://github.com/user-attachments/assets/1607d2bf-89c5-480b-b365-6df55a06d6d1" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
 
-```sql
--- Paste your SQL code below for Question 3
+```
+INSERT INTO Student_details(RollNo,Name,Gender,Subject,Marks)values(201,"David Lee","M","Physics",92);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="771" height="801" alt="image" src="https://github.com/user-attachments/assets/63cec9e5-0764-4a4b-b058-2f62b24a655c" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+Create a new table named item with the following specifications and constraints:
+1. item_id as TEXT and as primary key.
+2. item_desc as TEXT.
+3. rate as INTEGER.
+4. icom_id as TEXT with a length of 4.
+5. icom_id is a foreign key referencing com_id in the company table.
+6. The foreign key should cascade updates and deletes.
+7. item_desc and rate should not accept NULL.
 
-```sql
--- Paste your SQL code below for Question 4
+```
+CREATE TABLE item(item_id TEXT primary key,
+item_desc TEXT NOT NULL,
+rate INTEGER NOT NULL,
+icom_id TEXT check(length<=4),
+foreign key(icom_id) references company(com_id) ON UPDATE CASCADE SET NULL,
+foreign key(icom_id) references company(com_id) ON DELETE SET NULL);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="567" height="795" alt="image" src="https://github.com/user-attachments/assets/b5d89d0f-ced5-4930-8b8d-d6a1146f0054" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Create a table named Products with the following constraints:
+ProductID should be the primary key.
+ProductName should be NOT NULL.
+Price is of real datatype and should be greater than 0.
+Stock is of integer datatype and should be greater than or equal to 0.
 
 ```sql
--- Paste your SQL code below for Question 5
+CREATE TABLE Products(ProductID int primary key,
+ProductName text NOT NULL,
+Price real check(Price>=0),
+Stock int check(Stock>=0));
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="687" height="771" alt="image" src="https://github.com/user-attachments/assets/cf0ad91d-2411-406d-be88-3fa3288df90f" />
+
 
 **Question 6**
 ---
