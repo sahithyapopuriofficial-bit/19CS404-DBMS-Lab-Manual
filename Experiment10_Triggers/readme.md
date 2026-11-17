@@ -27,7 +27,7 @@ END;
 
 ## 1. Write a trigger to log every insertion into a table.
 **Steps:**
-- Create two tables: `employees` (for storing data) and `employee_log` (for logging the inserts).
+- Create two tables: `employee1` (for storing data) and `employee_log` (for logging the inserts).
 - Write an **AFTER INSERT** trigger on the `employees` table to log the new data into the `employee_log` table.
 
 ### PL/SQL Query
@@ -190,7 +190,7 @@ SELECT * FROM audit_log;
 
 ## 5. Write a trigger that checks a condition before allowing insertion into a table.
 **Steps:**
-- Write a **BEFORE INSERT** trigger on the `employees` table to check if the inserted salary meets a specific condition (e.g., salary must be greater than 3000).
+- Write a **BEFORE INSERT** trigger on the `employee2` table to check if the inserted salary meets a specific condition (e.g., salary must be greater than 3000).
 - If the condition is not met, raise an error to prevent the insert.
 
 ### PL/SQL Query
@@ -213,14 +213,15 @@ BEGIN
     END IF;
 END;
 
-INSERT INTO employee2 VALUES (1, 'Ravi', 5000);
+INSERT INTO employee2 VALUES (10, 'Swathi', 5000);
 
-INSERT INTO employee2 VALUES (2, 'Priya', 2500);
+INSERT INTO employee2 VALUES (11, 'Aruna', 2500);
 ```
 **Expected Output:**
 - If the inserted salary in the `employees` table is below the condition (e.g., salary < 3000), the insert operation is blocked, and an error message is raised, such as: `ERROR: Salary below minimum threshold.`
 <img width="703" height="643" alt="image" src="https://github.com/user-attachments/assets/b8b8b112-1711-4489-9573-0d74fa6060ad" />
-<img width="937" height="167" alt="image" src="https://github.com/user-attachments/assets/0712c2b2-8f6d-4a6b-9011-e4d405a45f46" />
+<img width="833" height="162" alt="image" src="https://github.com/user-attachments/assets/e0557378-af6d-4482-a42c-3bf5e23a223a" />
+
 
 ## RESULT
 Thus, the PL/SQL trigger programs were written and executed successfully.
